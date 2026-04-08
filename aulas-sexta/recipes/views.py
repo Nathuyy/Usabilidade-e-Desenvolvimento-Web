@@ -6,7 +6,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(req):
-  return HttpResponse('HOME')
+  return HttpResponse('''<!DOCTYPE>
+                      <html>
+                        <head>eai
+                        </head>
+                      </html>
+                      
+                      ''')
 
 def contato(req):
   return HttpResponse('contato')
