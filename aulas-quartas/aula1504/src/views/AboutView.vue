@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <h1>Agora sim eu programei</h1>
-    <CardCliente :cliente="clientes[0]" />
+    <div v-for="cliente in clientes" v-bind:key="cliente.nome">
+      <CardCliente v-if="cliente.idade >= 18" :cliente="cliente" />
+    </div>
     <CaixaTexto texto="olha o texto ai" />
   </div>
 </template>
@@ -17,9 +19,9 @@ export default {
   data() {
     return {
       clientes: [
-        { nome: 'nathy', email: 'nathy@gmail.com', idade: 20 },
-        { nome: 'nathy1', email: 'nathy@gmail.com', idade: 20 },
-        { nome: 'nathy2', email: 'nathy@gmail.com', idade: 20 },
+        { nome: 'nathy', email: 'nathy@gmail.com', idade: 18 },
+        { nome: 'nathy1', email: 'nathy@gmail.com', idade: 15 },
+        { nome: 'nathy2', email: 'nathy@gmail.com', idade: 30 },
       ],
     }
   },
